@@ -71,19 +71,19 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    // text: $exampleText.val().trim(),
+    // description: $exampleDescription.val().trim()
     plate: $plate.val().trim(),
     state: $state.val().trim(),
     location: $location.val().trim(),
     amount: $amount.val().trim(),
-    date: $date.val().trim(),
+    date: $date.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
   API.saveExample(example).then(function() {
     refreshExamples();
