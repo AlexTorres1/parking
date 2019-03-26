@@ -27,15 +27,42 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
+        <h3>Recent:</h3>
+        {{!-- added a table here --}}
+        <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Plate#</th>
+      <th scope="col">State</th>
+      <th scope="col">Location</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each examples}}
+    <tr data-id="{{this.id}}">
+    
+      <th scope="row"><a href="example/{{this.id}}">{{this.plate}}</a></th>
+      <td>{{this.state}}</td>
+      <td>{{this.location}}</td>
+      <td>{{this.amount}}</td>
+      <td>{{this.date}}</td>      
+      <td><button class="btn btn-danger float-right delete">ｘ</button></td>      
+    </tr>
+    {{/each}}
+   
+  </tbody>
+</table>
+        {{!-- <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="example/{{this.id}}">{{this.plate}}</a>{{this.state}} {{this.location}}
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
-        </ul>
+        </ul> --}}
       </div>
     </div>
   </div>
