@@ -1,3 +1,5 @@
+// var moment = require("moment");
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -9,6 +11,7 @@ var $state = $("#state");
 var $location = $("#location");
 var $amount = $("#amount");
 var $date = $("#date");
+// $date = moment($date).format("MMMM Do YYYY, h:mm:ss a");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -71,19 +74,19 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    // text: $exampleText.val().trim(),
+    // description: $exampleDescription.val().trim()
     plate: $plate.val().trim(),
-    state: $state.val().trim(),
+    state: $state.val(),
     location: $location.val().trim(),
     amount: $amount.val().trim(),
-    date: $date.val().trim(),
+    date: $date.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
   API.saveExample(example).then(function() {
     refreshExamples();
