@@ -4,6 +4,12 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+var $plate = $("#plate");
+var $state = $("#state");
+var $location = $("#location");
+var $amount = $("#amount");
+var $date = $("#date");
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -67,6 +73,11 @@ var handleFormSubmit = function(event) {
   var example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
+    plate: $plate.val().trim(),
+    state: $state.val().trim(),
+    location: $location.val().trim(),
+    amount: $amount.val().trim(),
+    date: $date.val().trim(),
   };
 
   if (!(example.text && example.description)) {
@@ -80,6 +91,11 @@ var handleFormSubmit = function(event) {
 
   $exampleText.val("");
   $exampleDescription.val("");
+  $plate.val("");
+  $state.val("");
+  $location.val("");
+  $amount.val("");
+  $date.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
