@@ -3,11 +3,13 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    // var date = moment(res.date).format("MMM Do YY");
     db.parkingNew.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
       });
+      // console.log(JSON.stringify(dbExamples[0].date));
     });
   });
 
