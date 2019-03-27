@@ -95,16 +95,16 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="example-list">
     {{#each examples}}
-    <tr data-id="{{this.id}}" id="example-list">
+    <tr data-id="{{this.id}}" id="row-{{this.id}}">
     
       <th scope="row"><a href="example/{{this.id}}">{{this.plate}}</a></th>
       <td>{{this.state}}</td>
       <td>{{this.location}}</td>
       <td>{{this.amount}}</td>
       <td>{{this.date}}</td>      
-      <td><button class="btn btn-danger float-right delete">ｘ</button></td>      
+      <td><a href="javascript:void(0)" class="btn btn-danger float-right delete" onclick="dropRow({{this.id}})">ｘ</a></td>      
     </tr>
     {{/each}}
    

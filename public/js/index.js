@@ -99,16 +99,19 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
+var dropRow = function(idToDelete) {
+  console.log("hello");
+  /*var idToDelete = $(this)
     .parent()
-    .attr("data-id");
+    .attr("data-id");*/
 
   API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+    //refreshExamples();
+    $("#row-" + idToDelete).remove();
+    alert("Item will be removed now");
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);
