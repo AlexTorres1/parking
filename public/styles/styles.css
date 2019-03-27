@@ -1,3 +1,30 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-image: url("../images/parkingGarage.jpg");
+  background-size: cover;
+  background-position: center; 
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+  
+}
+.btn {
+  box-shadow: 5px 5px 5px black;
+}
+
+@media screen and (max-width: 600px) { 
+.btn {
+  font-size: 100px;
+}
+#titleCard {
+  font-size: 130px;
+}
+#paragraphCard {
+  font-size: 80px;
+}
+}
