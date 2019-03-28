@@ -1,4 +1,5 @@
 // var moment = require("moment");
+// var verify = require("./verification");
 
 // Get references to page elements
 var $exampleText = $("#example-text");
@@ -6,6 +7,9 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+
+
+// var $inputPassword = $("#inputPassword");
 var $plate = $("#plate");
 var $state = $("#state");
 var $location = $("#location");
@@ -110,7 +114,7 @@ var dropRow = function(idToDelete) {
     $("#row-" + idToDelete).remove();
     alert("Item will be removed now");
   });
-};
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
