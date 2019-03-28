@@ -10,10 +10,10 @@
             <input type="text" id="plate" class="form-control" aria-describedby="example-text" placeholder="A123456">
           </div>
           <div class="form-group">
-            <label for="example-text">State</label>
-            <input type="text" id="state" class="form-control" aria-describedby="example-text" placeholder="FL">
+            {{!-- <label for="example-text">State</label>
+            <input type="text" id="state" class="form-control" aria-describedby="example-text" placeholder="FL"> --}}
 
-            {{!-- <select class="form-control" id="exampleFormControlSelect1 state" aria-describedby="example-text">
+            <select class="form-control" id="state" aria-describedby="example-text">
       <option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
@@ -65,7 +65,7 @@
 	<option value="WV">West Virginia</option>
 	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
-    </select> --}}
+    </select>
 
           </div>
           <div class="form-group">
@@ -95,16 +95,16 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="example-list">
     {{#each examples}}
-    <tr data-id="{{this.id}}">
+    <tr data-id="{{this.id}}" id="row-{{this.id}}">
     
       <th scope="row"><a href="example/{{this.id}}">{{this.plate}}</a></th>
       <td>{{this.state}}</td>
       <td>{{this.location}}</td>
       <td>{{this.amount}}</td>
       <td>{{this.date}}</td>      
-      <td><button class="btn btn-danger float-right delete">ｘ</button></td>      
+      <td><a href="javascript:void(0)" class="btn btn-danger float-right delete" onclick="dropRow({{this.id}})">ｘ</a></td>      
     </tr>
     {{/each}}
    

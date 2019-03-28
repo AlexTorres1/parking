@@ -1,4 +1,5 @@
 // var moment = require("moment");
+// var verify = require("./verification");
 
 // Get references to page elements
 var $exampleText = $("#example-text");
@@ -6,6 +7,9 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+
+
+// var $inputPassword = $("#inputPassword");
 var $plate = $("#plate");
 var $state = $("#state");
 var $location = $("#location");
@@ -43,24 +47,20 @@ var API = {
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
+      // var $a = $("<a>")
+      //   .text(example.text)
+      //   .attr("href", "/example/" + example.id);
+      // var $li = $("<li>")
+      //   .attr({
+      //     class: "list-group-item",
+      //     "data-id": example.id
+      //   })
+      //   .append($a);
+      // var $button = $("<button>")
+      //   .addClass("btn btn-danger float-right delete")
+      //   .text("ｘ");
+      // $li.append($button);
+      // return $li;
     });
 
     $exampleList.empty();
@@ -103,16 +103,19 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
+var dropRow = function(idToDelete) {
+  console.log("hello");
+  /*var idToDelete = $(this)
     .parent()
-    .attr("data-id");
+    .attr("data-id");*/
 
   API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+    //refreshExamples();
+    $("#row-" + idToDelete).remove();
+    alert("Item will be removed now");
   });
-};
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);

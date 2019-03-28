@@ -1,3 +1,42 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-image: url("../images/parkingGarage.jpg");
+  background-size: cover;
+  background-position: center; 
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+  
+}
+.btn {
+  box-shadow: 5px 5px 5px black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 600px) { 
+.btn {
+  font-size: 100px;
+}
+#titleCard {
+  font-size: 130px;
+}
+#paragraphCard {
+  font-size: 80px;
+}
+}
