@@ -1,5 +1,5 @@
 .parallax {
-    background: url(..public/images/map.png);
+    background: url(../images/map.png);
     min-height: 400px; 
     background-attachment: fixed;
     background-position: center;
@@ -7,7 +7,7 @@
     background-size: cover;
   }
   .parallax2 {
-    background: url(..public/images/parking-parking-lot-underground-garage-2996.jpg);
+    background: url(../images/parking-parking-lot-underground-garage-2996.jpg);
     min-height: 200px; 
     background-attachment: fixed;
     background-position: center;
