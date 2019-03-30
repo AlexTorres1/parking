@@ -5,11 +5,13 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // var date = moment(res.date).format("MMM Do YY");
     db.parkingNew.findAll({}).then(function(dbExamples) {
-      verify.passwordMatch(dbExamples);
+      // verify.passwordMatch(dbExamples);
+      console.log("dbExamples issss: " + dbExamples);
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
       });
+
       // console.log(JSON.stringify(dbExamples[0].date));
     });
   });

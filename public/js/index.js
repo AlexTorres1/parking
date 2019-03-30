@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // var moment = require("moment");
 // var verify = require("./verification");
 
@@ -6,8 +7,6 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
-
-
 
 // var $inputPassword = $("#inputPassword");
 var $plate = $("#plate");
@@ -47,6 +46,9 @@ var API = {
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
+      var tr =
+        `<tr data-id="${example.id}" id="row-${example.id}"><th scope="row"><a href="example/${example.id}">${example.plate}</a></th><td>${example.state}</td><td>${example.location}</td><td>${example.amount}</td><td>${example.date}</td><td><a href="javascript:void(0)" class="btn btn-danger float-right delete" onclick="dropRow(${example.id})">ｘ</a></td></tr>`;
+        return tr;
       // var $a = $("<a>")
       //   .text(example.text)
       //   .attr("href", "/example/" + example.id);
@@ -88,8 +90,9 @@ var handleFormSubmit = function(event) {
   //   return;
   // }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(example).then(function(response) {
     refreshExamples();
+    // document.location.reload();
   });
 
   $exampleText.val("");
@@ -114,7 +117,7 @@ var dropRow = function(idToDelete) {
     $("#row-" + idToDelete).remove();
     alert("Item will be removed now");
   });
-
+};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);

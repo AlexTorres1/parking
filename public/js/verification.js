@@ -1,6 +1,3 @@
-var verifyCorrect;
-var verifyError;
-
 var verify = {
   passwordMatch: function(dbPassword, inputPassword) {
     console.log("holy shit it workd. id: " + JSON.stringify(dbPassword[0].id));
