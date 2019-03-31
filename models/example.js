@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var parkingNew = sequelize.define("parkingNew", {
-    plate: {type: varchar(32), allowNull: false},
+    plate: { type: DataTypes.STRING, allowNull: false},
     state: DataTypes.STRING,
-    location: {type: varchar(32), allowNull: false},
+    location: { type: DataTypes.STRING, allowNull: false},
     // eslint-disable-next-line prettier/prettier
     amount: DataTypes.DECIMAL(10,2),
     // eslint-disable-next-line prettier/prettier
