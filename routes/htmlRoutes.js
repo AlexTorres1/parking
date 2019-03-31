@@ -10,9 +10,10 @@ module.exports = function(app) {
         msg: "Welcome!",
         examples: dbExamples
       })
-      // if(verify.passwordMatch(dbExamples, password) === true){
-      //   console.log("you're password is correct")
-      // };
+      console.log(dbExamples);
+      if(verify.passwordMatch(dbExamples, password) === true){
+        console.log("you're password is correct")
+      };
       // console.log(JSON.stringify(dbExamples[0].date));
     });
   });
