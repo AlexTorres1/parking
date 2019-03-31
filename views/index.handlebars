@@ -1,194 +1,168 @@
-
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="#"><i class="fas fa-parking"></i>&nbsp;Parking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Parking</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="reports.html">Reports</a></li>                    
-                </ul>
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+    <div class="container"><a class="navbar-brand logo" href="#"><i class="fas fa-parking"></i>&nbsp;Parking</a><button
+            class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle
+                navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Parking</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="reports.html">Reports</a></li>
+            </ul>
         </div>
-        </div>
-    </nav>
-    <div class="parallax">
+    </div>
+</nav>
+<div class="parallax">
 
-        </div>
-    <main class="page lanidng-page">
- 
-
-        <section id="login">
-            <div class="container-fluid">
-                <div class="row login-row">
-                    <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-sm-2 offset-md-3 offset-lg-0 align-self-center mx-auto d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
-                        <div class="m-auto w-lg-75 w-xl-50">
-                            <h2 class="text-info font-weight-light mb-5"><i class="fas fa-car-side"></i>&nbsp;Enter Your Car</h2>
-                            <form>
-                                <div class="form-group"><label class="text-secondary">License Plate</label><input class="form-control" type="text" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
-                                <div class="form-group"><label for="inputState">State</label>
-                                    <select id="inputState" class="form-control">
-                                      <option selected>Choose...</option>
-                                      <option value="AK">Alaska</option>
-	<option value="AZ">Arizona</option>
-	<option value="AR">Arkansas</option>
-	<option value="CA">California</option>
-	<option value="CO">Colorado</option>
-	<option value="CT">Connecticut</option>
-	<option value="DE">Delaware</option>
-	<option value="DC">District Of Columbia</option>
-	<option value="FL">Florida</option>
-	<option value="GA">Georgia</option>
-	<option value="HI">Hawaii</option>
-	<option value="ID">Idaho</option>
-	<option value="IL">Illinois</option>
-	<option value="IN">Indiana</option>
-	<option value="IA">Iowa</option>
-	<option value="KS">Kansas</option>
-	<option value="KY">Kentucky</option>
-	<option value="LA">Louisiana</option>
-	<option value="ME">Maine</option>
-	<option value="MD">Maryland</option>
-	<option value="MA">Massachusetts</option>
-	<option value="MI">Michigan</option>
-	<option value="MN">Minnesota</option>
-	<option value="MS">Mississippi</option>
-	<option value="MO">Missouri</option>
-	<option value="MT">Montana</option>
-	<option value="NE">Nebraska</option>
-	<option value="NV">Nevada</option>
-	<option value="NH">New Hampshire</option>
-	<option value="NJ">New Jersey</option>
-	<option value="NM">New Mexico</option>
-	<option value="NY">New York</option>
-	<option value="NC">North Carolina</option>
-	<option value="ND">North Dakota</option>
-	<option value="OH">Ohio</option>
-	<option value="OK">Oklahoma</option>
-	<option value="OR">Oregon</option>
-	<option value="PA">Pennsylvania</option>
-	<option value="RI">Rhode Island</option>
-	<option value="SC">South Carolina</option>
-	<option value="SD">South Dakota</option>
-	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
-	<option value="UT">Utah</option>
-	<option value="VT">Vermont</option>
-	<option value="VA">Virginia</option>
-	<option value="WA">Washington</option>
-	<option value="WV">West Virginia</option>
-	<option value="WI">Wisconsin</option>
-	<option value="WY">Wyoming</option>
-                                    </select></div>
-                                <div class="form-group"><label class="text-secondary">Password</label><input class="form-control" type="password" required=""></div><button class="btn btn-info mt-2" type="submit">Log In</button><button class="btn btn-info mt-2" type="submit" id="register">Add New Vehicle</button></form>
-                        </div>
+</div>
+<main class="page lanidng-page">
+    <section id="login">
+        <div class="container-fluid">
+            <div class="row login-row">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-sm-2 offset-md-3 offset-lg-0 align-self-center mx-auto d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0"
+                    id="login-block">
+                    <div class="m-auto w-lg-75 w-xl-50">
+                        <h2 class="text-info font-weight-light mb-5"><i class="fas fa-car-side"></i>&nbsp;Enter Your Car
+                        </h2>
+                        <form>
+                            <div class="form-group"><label class="text-secondary" id="email">Email</label><input
+                                    class="form-control" type="text" required=""
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
+                            <div class="form-group">
+                                <label class="text-secondary" id="password">Password</label>
+                                <input class="form-control" type="password" required="">
+                            </div>
+                            <button class="btn btn-info mt-2" type="submit">Log In</button>
+                            <button class="btn btn-info mt-2" type="submit" id="register">Add New Vehicle</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-
-        
-        <section class="portfolio-block call-to-action border-bottom">
-            <div class="container">
-                <div class="d-flex justify-content-center align-items-center content">
-                    <h3>Stuff</h3><button class="btn btn-outline-primary btn-lg" type="button">Button</button></div>
-            </div>
+        </div>
+    </section>
 
 
-        </section>
-        <section class="portfolio-block skills">
-            <div class="container">
-                <div class="heading">
-                    <h2>Other Stuff</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0"></div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link"
-                                    href="#">Link</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0"></div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link"
-                                    href="#">Link</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0"></div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link"
-                                    href="#">Link</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    
-    <section class="portfolio-block website gradient">
+    <section class="portfolio-block call-to-action border-bottom">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12 col-lg-5 offset-lg-1 text">
-                    <h3>Stuff?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efr nunc, vivamus vel accumsan dui. Quisque ac dolor cursus, volutpat nisl vel, porttitor eros.</p>
-                </div>
-                <div class="col-md-12 col-lg-5">
-                    <div class="portfolio-laptop-mockup">
-                        <div class="screen">
-                            <div class="screen-content" style="background-image:url(&quot;assets/img/tech/image6.png&quot;);"><img src="assets/img/images.jpg"></div>
+            <div class="d-flex justify-content-center align-items-center content">
+                <h3>Stuff</h3><button class="btn btn-outline-primary btn-lg" type="button">Button</button>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="portfolio-block skills">
+        <div class="container">
+            <div class="heading">
+                <h2>Other Stuff</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card special-skill-item border-0"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Title</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
                         </div>
-                        <div class="keyboard"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card special-skill-item border-0"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Title</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card special-skill-item border-0"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Title</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <div class="parallax2"></div>
-    </section>
+</main>
 
-        <div class="modal" tabindex="-1" role="dialog" id="addNewCar">
-        <div class="modal-dialog" role="document">
+
+<section class="portfolio-block website gradient">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-lg-5 offset-lg-1 text">
+                <h3>Stuff?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est
+                    sed, efr nunc, vivamus vel accumsan dui. Quisque ac dolor cursus, volutpat nisl vel, porttitor eros.
+                </p>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div class="portfolio-laptop-mockup">
+                    <div class="screen">
+                        <div class="screen-content"
+                            style="background-image:url(&quot;assets/img/tech/image6.png&quot;);"><img
+                                src="assets/img/images.jpg"></div>
+                    </div>
+                    <div class="keyboard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="parallax2"></div>
+</section>
+
+<div class="modal" tabindex="-1" role="dialog" id="addNewCar">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-            <div class="form-group"><label class="text-secondary">License Plate</label><input class="form-control" type="text" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
-            <div class="form-group"><label class="text-secondary">Password</label><input class="form-control" type="password" required=""></div>
+                <div class="form-group">
+                    <label class="text-secondary">Email</label>
+                    <input class="form-control" id="userEmail" type="text" required=""
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email">
+                </div>
+                <div class="form-group">
+                    <label class="text-secondary">Password</label>
+                    <input class="form-control" id="userPassword" type="password" required="">
+                </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Register</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Register</button>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
+</div>
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="links"><a href="#">About</a><a href="#">Contact Us</a><a href="#"></a></div>
-            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
-        </div>
-    </footer>
-   
-   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="/js/parking.js"></script>
+<footer class="page-footer">
+    <div class="container">
+        <div class="links"><a href="#">About</a><a href="#">Contact Us</a><a href="#"></a></div>
+        <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                    class="icon ion-social-instagram-outline"></i></a><a href="#"><i
+                    class="icon ion-social-twitter"></i></a></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+<script src="/js/parking.js"></script>
