@@ -3,18 +3,23 @@ var verify = require("../public/js/verification");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    var password = req.body.password
     // var date = moment(res.date).format("MMM Do YY");
-    db.parkingNew.findAll({}).then(function(dbExamples) {
-      // verify.passwordMatch(dbExamples);
-      console.log("dbExamples issss: " + dbExamples);
+    db.newCar.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
-      });
-
+      })
+      if(verify.passwordMatch(dbExamples, password) === true){
+        console.log("you're password is correct")
+      };
       // console.log(JSON.stringify(dbExamples[0].date));
     });
   });
+
+  app.get("/reports", function(req, res){
+    res.render("reports");
+  })
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
