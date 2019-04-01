@@ -90,3 +90,29 @@
     padding-bottom: 10px;
     background-color: aliceblue;
   }
+
+  input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+  }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #orange {
+    color: #E57373!important;
+  }
+
+  .page-footer {
+    background-color: #E57373;
+  }

@@ -16,6 +16,9 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/reports", function(req, res){
+    res.render("reports")
+  })
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.parkingNew
