@@ -5,7 +5,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     var password = req.body.password
     // var date = moment(res.date).format("MMM Do YY");
-    db.newCar.findAll({}).then(function(dbExamples) {
+    db.user.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
