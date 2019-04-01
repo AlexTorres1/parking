@@ -8,5 +8,10 @@ module.exports = function(sequelize, DataTypes) {
     // eslint-disable-next-line prettier/prettier
     date: DataTypes.DATE,
   });
+
+  parkingNew.associate = function(models) {
+    parkingNew.belongsTo(models.newCar)
+  }
+
   return parkingNew;
 };
