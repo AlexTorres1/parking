@@ -1,5 +1,4 @@
 var db = require("../models");
-var verify = require("../public/js/verification");
 
 module.exports = function(app) {
   // Get all examples
@@ -29,17 +28,18 @@ module.exports = function(app) {
   // --------- CODE below is for getting, creating and deleting USER
 
   // Get user by email
-  app.get("/api/user/:email", function(req, res) {
-    var enteredPassword = req.body.existingPassword;
-    console.log(enteredPassword);
+  app.get("/api/user/:email/:password", function(req, res) {
+    var enteredPassword = req.params.password;
+   // console.log(enteredPassword);
     db.user.findOne({
       limit: 1,
       where: { email: req.params.email }
     }).then(function(userData) {
-      if(verify.passwordMatch(userData.password, enteredPassword) === true){
-          console.log("you're password is correct")
-        };
-      res.json(userData);
+      if(enteredPassword === userData.password){
+        console.log("you did it")
+      }else{
+        console.log("You failed")
+      }
     });
   });
 
