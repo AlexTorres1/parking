@@ -1,168 +1,193 @@
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-    <div class="container"><a class="navbar-brand logo" href="#"><i class="fas fa-parking"></i>&nbsp;Parking</a><button
-            class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle
-                navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Parking</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="reports.html">Reports</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="parallax">
 
-</div>
-<main class="page lanidng-page">
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+            <div class="container"><a class="navbar-brand logo text-center" href="#"><i class="fas fa-parking"></i>&nbsp;Parking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                {{!-- <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index">Parking</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="reports">Reports</a></li>             
+                    </ul>
+                </div> --}}
+            </div>
+        </nav>
+    <div class="parallax">
+
+    </div>
+    </header>
+    <main class="page lanidng-page"> 
+
     <section id="login">
+        <div class="row">
         <div class="container-fluid">
             <div class="row login-row">
-                <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-sm-2 offset-md-3 offset-lg-0 align-self-center mx-auto d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0"
-                    id="login-block">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-sm-2 offset-md-3 offset-lg-0 align-self-center mx-auto d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
                     <div class="m-auto w-lg-75 w-xl-50">
-                        <h2 class="text-info font-weight-light mb-5"><i class="fas fa-car-side"></i>&nbsp;Enter Your Car
-                        </h2>
+                        <h2 class="text-info font-weight-light mb-5" id="orange"><i class="fas fa-car-side"></i>&nbsp;Enter Your Car</h2>
                         <form>
-                            <div class="form-group"><label class="text-secondary" id="email">Email</label><input
-                                    class="form-control" type="text" required=""
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email" id="existingEmail"></div>
-                            <div class="form-group">
-                                <label class="text-secondary" id="password">Password</label>
-                                <input class="form-control" type="password" required="" id="existingPassword">
+                            <div class="form-group"><label class="text-secondary">Email</label><input class="form-control" type="text" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email">
                             </div>
-                            <button class="btn btn-info mt-2" type="submit" id="logingIn">Log In</button>
-                            <button class="btn btn-info mt-2" type="submit" id="addUser">New User</button>
-                        </form>
+                            
+                            <div class="form-group">
+                                <label class="text-secondary">Password</label><input class="form-control" type="password" required="">
+                            </div>
+                            
+                            <div class="container">
+                            <div class="col text-center py-2">  
+                            <button class="btn btn-info mt-2" type="submit">Log In</button>
+                            <button class="btn btn-info mt-2" type="button" data-toggle="modal" data-target="#modal">New User</button>
+                            </div>
+                            </div>
+
+                            
+                            
+                            </form>
+                        <p class="mt-3 mb-0"><a href="#" class="text-info small">Forgot your email or password?</a></p>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+</div>
+        
+    {{!-- <section class="portfolio-block call-to-action border-bottom">
 
-
-    <section class="portfolio-block call-to-action border-bottom">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center content">
                 <h3>Stuff</h3><button class="btn btn-outline-primary btn-lg" type="button">Button</button>
             </div>
         </div>
+    </section> --}}
+        {{!-- <section class="portfolio-block skills">
+            <div class="container">
+                <div class="heading">
+                    <h2 class="text-info font-weight-light mb-5" id="orange">Global Parking Stats</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> --}}
 
-
-    </section>
-    <section class="portfolio-block skills">
+    
+    {{!-- <section class="portfolio-block website gradient">
         <div class="container">
-            <div class="heading">
-                <h2>Other Stuff</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card special-skill-item border-0"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
-                        </div>
-                    </div>
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-5 offset-lg-1 text">
+                    <h3>Stuff?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efr nunc, vivamus vel accumsan dui. Quisque ac dolor cursus, volutpat nisl vel, porttitor eros.</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card special-skill-item border-0"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+                <div class="col-md-12 col-lg-5">
+                    <div class="portfolio-laptop-mockup">
+                        <div class="screen">
+                            <div class="screen-content" style="background-image:url(&quot;assets/img/tech/image6.png&quot;);"><img src="assets/img/images.jpg"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card special-skill-item border-0"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+                        <div class="keyboard"></div>
 
-
-<section class="portfolio-block website gradient">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-12 col-lg-5 offset-lg-1 text">
-                <h3>Stuff?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est
-                    sed, efr nunc, vivamus vel accumsan dui. Quisque ac dolor cursus, volutpat nisl vel, porttitor eros.
-                </p>
-            </div>
-            <div class="col-md-12 col-lg-5">
-                <div class="portfolio-laptop-mockup">
-                    <div class="screen">
-                        <div class="screen-content"
-                            style="background-image:url(&quot;assets/img/tech/image6.png&quot;);"><img
-                                src="assets/img/images.jpg"></div>
                     </div>
                     <div class="keyboard"></div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="parallax2"></div>
-</section>
+    </section> --}}
+    <section>
+        <div class="parallax2"></div>
+    </section>
 
-<div class="modal" tabindex="-1" role="dialog" id="addNewCar">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    {{!-- <div class="modal fade" role="dialog" tabindex="-1" id="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h6 class="modal-title">REGISTER </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label class="text-secondary">Email</label>
-                    <input class="form-control" type="text" required=""
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email" id="newEmail">
-                </div>
-                <div class="form-group">
-                    <label class="text-secondary">Password</label>
-                    <input class="form-control" type="password" required="" id="newPassword">
+                <h2 class="modalTitle">Register Your Car: </h2>
+                <p class="text-center ">Input your car's data. </p>
+                <div class="col">
+                <input type="text" placeholder="License plate #" class=" modalInput">
+                <input type="text" placeholder="State" class=" modalInput"><input type="password" placeholder="Password " class="modalInput">
+                <input type="text" placeholder="Make" class=" modalInput">
+                <input type="text" placeholder="Model" class=" modalInput">
+                <input type="text" placeholder="Year" class=" modalInput">
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="register">Register</button>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">REGISTER </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modalTitle">Register Your Car: </h2>
+                <p class="text-center ">Input your car's data. </p>
+                <div class="col">
+                <input type="text" placeholder="Email" class=" modalInput">
+                <input type="text" placeholder="Password" class=" modalInput">
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="page-footer">
-    <div class="container">
-        <div class="links"><a href="#">About</a><a href="#">Contact Us</a><a href="#"></a></div>
-        <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-                    class="icon ion-social-instagram-outline"></i></a><a href="#"><i
-                    class="icon ion-social-twitter"></i></a></div>
-    </div>
-</footer>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a href="#">About</a><a href="#">Contact Us</a><a href="#"></a></div>
+            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
+        </div>
+    </footer>
+    
+   
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script>
+        var ctx3 = document.getElementById('myChart3').getContext('2d');
+    var chart = new Chart(ctx3, {
+    // The type of chart we want to create
+    type: 'line',
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My Second dataset',
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-<script src="/js/parking.js"></script>
+    // Configuration options go here
+    options: {}
+});
+    </script>
+    
+
