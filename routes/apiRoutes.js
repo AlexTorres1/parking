@@ -90,4 +90,31 @@ module.exports = function(app) {
   });
 
 
+  // --------- CODE below is to Add and Delete parking information
+
+  // Get parking by car plate
+  app.get("/api/park/:plate", function (req, res) {
+    db.parkingNew
+      .findAll({ where: { plate: req.params.plate } })
+      .then(function(parkData) {
+        res.json(parkData);
+      });
+  });
+
+  // Create a new parking
+  app.post("/api/park", function(req, res) {
+    db.parkingNew.create(req.body).then(function(parkData) {
+      res.json(parkData);
+    });
+  });
+
+  // Delete parking by id
+  app.delete("/api/park/:id", function(req, res) {
+    db.parkingNew
+      .destroy({ where: { id: req.params.id } })
+      .then(function(parkData) {
+        res.json(parkData);
+      });
+  });
+
 };
