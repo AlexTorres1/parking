@@ -11,9 +11,9 @@ module.exports = function(app) {
         examples: dbExamples
       })
       console.log(dbExamples);
-      if(verify.passwordMatch(dbExamples, password) === true){
-        console.log("you're password is correct")
-      };
+      // if(verify.passwordMatch(dbExamples, password) === true){
+      //   console.log("you're password is correct")
+      // };
       // console.log(JSON.stringify(dbExamples[0].date));
     });
   });
