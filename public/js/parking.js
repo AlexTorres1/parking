@@ -3,7 +3,7 @@ $("#addUser").click(function() {
   $("#addNewCar").modal("show");
 });
 
-// The API object contains methods for each kind of request we'll make
+// API for user
 var API = {
   saveExample: function(example) {
     return $.ajax({
@@ -28,6 +28,20 @@ var API = {
     });
   }
 };
+
+//API for newCar
+var addVehicle = {
+  savePlate: function(example) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/car",
+      data: JSON.stringify(example)
+    });
+  },
+}
 
 //register is id for register new user (inside modal)
 $("#register").click(function() {
@@ -63,3 +77,16 @@ $("#logingIn").click(function() {
     console.log(response);
   });
 });
+
+
+//add a new license plate
+$("#registerVehicle").click(function(){
+  var addingVehicle = {
+    plate:  $("#newPlate").val().trim(),
+    state:  $("#state").val().trim()
+  }
+
+  addVehicle.savePlate(addingVehicle).then(function(response){
+    console.log(response);
+  })
+})
