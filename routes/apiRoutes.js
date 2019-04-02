@@ -76,6 +76,17 @@ module.exports = function(app) {
       });
   });
 
+  //get parks by email MAY NEED TO EDIT SEQUILIZE.....GOOD LUCK! lol
+  app.get("/api/car/:email", function(req, res) {
+    db.newCar
+      .findAll({
+        where: { email: req.params.email }
+      })
+      .then(function(carData) {
+        res.json(carData);
+      });
+  });
+
   // Create a new car
   app.post("/api/car", function(req, res) {
     db.newCar.create(req.body).then(function(carData) {
