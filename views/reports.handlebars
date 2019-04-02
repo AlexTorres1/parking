@@ -11,6 +11,7 @@
         </div>
     </nav>
 
+    <main>
     <section id="chartSection">
     <div id="charts">
         <div class="container">
@@ -25,6 +26,15 @@
         </div>
     </div>
     </section>
+
+    <div class="row">
+        <div class="container">
+            <div class="col text-center py-2">   
+            <button type="button mx-auto" data-toggle="modal" data-target="#addVehicleModal"class="btn btn-primary">Add Vehicle</button>
+            <button type="button mx-auto" data-toggle="modal" data-target="#addParkingModal"class="btn btn-primary">Add Parking</button>
+            </div>
+        </div> 
+    </div>
 
     <section id="data">
         <div class="container">        
@@ -78,6 +88,52 @@
         </div>
     </section>
 
+    <div class="modal fade" role="dialog" tabindex="-1" id="addVehicleModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">REGISTER </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modalTitle">Register Your Car: </h2>
+                <p class="text-center ">Input your car's data. </p>
+                <div class="col">
+                <input type="text" placeholder="License plate #" class=" modalInput">
+                <input type="text" placeholder="State" class=" modalInput">
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" role="dialog" tabindex="-1" id="addParkingModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">REGISTER </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modalTitle">Register Your Car: </h2>
+                <p class="text-center ">Input your car's data. </p>
+                <div class="col">
+                <input type="text" placeholder="License plate #" class=" modalInput">
+                <input type="text" placeholder="State" class=" modalInput">
+                <input type="text" placeholder="Location" class=" modalInput">
+                <input type="text" placeholder="Amount" class=" modalInput">
+                <input type="text" placeholder="Date" class=" modalInput">
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
+            </div>
+        </div>
+    </div>
+
+
+    </main>
+
         
     <footer class="page-footer">
         <div class="container">
@@ -86,79 +142,17 @@
         </div>
     </footer>
 
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'pie',
+  
 
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
 
-    // Configuration options go here
-    options: {}
-});
-
-var ctx2 = document.getElementById('myChart2').getContext('2d');
-    var chart = new Chart(ctx2, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My Second dataset',
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="/js/parking.js"></script>
- 
+
+    <script src="/js/index.js"></script>
+    <script src="/js/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    
+
