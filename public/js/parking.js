@@ -17,7 +17,7 @@ var API = {
   },
   getExamples: function(user) {
     return $.ajax({
-      url: "api/user/" + user.existingEmail,
+      url: "api/user/" + user.existingEmail + "/" + user.existingPassword,
       type: "GET"
     });
   },
@@ -49,7 +49,7 @@ $("#register").click(function() {
 });
 
 //login stuff
-$("#login").click(function() {
+$("#logingIn").click(function() {
   var user = {
     existingEmail: $("#existingEmail")
       .val()
@@ -58,7 +58,8 @@ $("#login").click(function() {
       .val()
       .trim()
   };
+
   API.getExamples(user).then(function(response) {
-    console.log("You logged in");
+    console.log(response);
   });
 });
