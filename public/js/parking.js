@@ -63,7 +63,8 @@ $("#register").click(function() {
 });
 
 //login stuff
-$("#logingIn").click(function() {
+$("#logingIn").click(function(event) {
+  event.preventDefault();
   var user = {
     existingEmail: $("#existingEmail")
       .val()
@@ -74,7 +75,12 @@ $("#logingIn").click(function() {
   };
 
   API.getExamples(user).then(function(response) {
-    console.log(response);
+    if (response) {
+      window.location.href = "reports";
+    } else {
+      alert("Wrong user name and/or password");
+    }
+    //  console.log("theee responseee" + response);
   });
 });
 
