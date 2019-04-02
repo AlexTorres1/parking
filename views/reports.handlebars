@@ -54,7 +54,12 @@
                     <tbody>
                         {{#each park}}
                         <tr>
-                            <td>{{this}}</td>
+                            <td>{{this.plate}}</td>
+                            <td>{{this.state}}</td>
+                            <td>{{this.location}}</td>
+                            <td>{{this.amount}}</td>
+                            <td>{{this.date}}</td>
+                            <td><button class="btn btn-primary" type="button" id="{{this.id}}">X</button></td>
                         </tr>
                         {{/each}}
                         {{!-- <tr>
