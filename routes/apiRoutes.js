@@ -37,9 +37,11 @@ module.exports = function(app) {
       })
       .then(function(userData) {
         if (enteredPassword === userData.password) {
+          console.log("email: " + userData.email);
+          localStorage.setItem("email", userData.email);
           console.log("you did it");
         } else {
-          console.log("You failed");
+          console.log("Wrong user name or password!");
         }
       });
   });

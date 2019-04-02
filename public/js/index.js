@@ -5,7 +5,7 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var $addCar = $("#addCar");
 var $exampleList = $("#example-list");
 
 // var $inputPassword = $("#inputPassword");
@@ -120,5 +120,5 @@ var dropRow = function(idToDelete) {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+$addCar.on("click", handleFormSubmit);
 //$exampleList.on("click", ".delete", handleDeleteBtnClick);
