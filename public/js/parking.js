@@ -45,7 +45,7 @@ $("#register").click(function() {
   API.saveExample(newUser).then(function(response) {
     alert("User added. Please Log in");
   });
-  $("#addNewCar").modal("hide");
+  $("#modal").modal("hide");
 });
 
 //login stuff
