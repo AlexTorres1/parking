@@ -25,13 +25,13 @@
                         <form>
                             <div class="form-group"><label class="text-secondary" id="email">Email</label><input
                                     class="form-control" type="text" required=""
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email" id="existingEmail"></div>
                             <div class="form-group">
                                 <label class="text-secondary" id="password">Password</label>
-                                <input class="form-control" type="password" required="">
+                                <input class="form-control" type="password" required="" id="existingPassword">
                             </div>
-                            <button class="btn btn-info mt-2" type="submit">Log In</button>
-                            <button class="btn btn-info mt-2" type="submit" id="register">New User</button>
+                            <button class="btn btn-info mt-2" type="submit" id="login">Log In</button>
+                            <button class="btn btn-info mt-2" type="submit" id="addUser">New User</button>
                         </form>
                     </div>
                 </div>
@@ -135,17 +135,17 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label class="text-secondary">Email</label>
-                    <input class="form-control" id="userEmail" type="text" required=""
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email">
+                    <input class="form-control" type="text" required=""
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email" id="newEmail">
                 </div>
                 <div class="form-group">
                     <label class="text-secondary">Password</label>
-                    <input class="form-control" id="userPassword" type="password" required="">
+                    <input class="form-control" type="password" required="" id="newPassword">
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Register</button>
+                <button type="button" class="btn btn-primary" id="register">Register</button>
             </div>
         </div>
     </div>
