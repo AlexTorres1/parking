@@ -36,12 +36,15 @@ module.exports = function(app) {
         where: { email: req.params.email }
       })
       .then(function(userData) {
+        // res.redirect("../public/reports");
         if (enteredPassword === userData.password) {
           console.log("email: " + userData.email);
           // localStorage.setItem("email", userData.email);
           console.log("you did it");
+          return res.redirect("/reports");
         } else {
           console.log("Wrong user name or password!");
+          return false;
         }
       });
   });
