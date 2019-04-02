@@ -24,23 +24,26 @@ module.exports = function(app) {
       });
   });
 
-
   // --------- CODE below is for getting, creating and deleting USER
 
   // Get user by email
   app.get("/api/user/:email/:password", function(req, res) {
     var enteredPassword = req.params.password;
-   // console.log(enteredPassword);
-    db.user.findOne({
-      limit: 1,
-      where: { email: req.params.email }
-    }).then(function(userData) {
-      if(enteredPassword === userData.password){
-        console.log("you did it")
-      }else{
-        console.log("You failed")
-      }
-    });
+    // console.log(enteredPassword);
+    db.user
+      .findOne({
+        limit: 1,
+        where: { email: req.params.email }
+      })
+      .then(function(userData) {
+        if (enteredPassword === userData.password) {
+          console.log("email: " + userData.email);
+          // localStorage.setItem("email", userData.email);
+          console.log("you did it");
+        } else {
+          console.log("Wrong user name or password!");
+        }
+      });
   });
 
   // Create a new user
@@ -52,33 +55,33 @@ module.exports = function(app) {
 
   // Delete user by id
   app.delete("/api/user/:id", function(req, res) {
-    db.user
-      .destroy({ where: { id: req.params.id } })
-      .then(function(userData) {
-        res.json(userData);
-      });
+    db.user.destroy({ where: { id: req.params.id } }).then(function(userData) {
+      res.json(userData);
+    });
   });
 
   // ------------ CODE below is to Add, Delete, Update or Get CAR
 
   // Get car by userId
-  app.get("/api/car/:userId", function (req, res) {
-    db.newCar.findAll({
-      where: { userId: req.params.userId }
-    }).then(function (carData) {
-      res.json(carData);
-    });
+  app.get("/api/car/:userId", function(req, res) {
+    db.newCar
+      .findAll({
+        where: { userId: req.params.userId }
+      })
+      .then(function(carData) {
+        res.json(carData);
+      });
   });
 
   // Create a new car
-  app.post("/api/car", function (req, res) {
-    db.newCar.create(req.body).then(function (carData) {
+  app.post("/api/car", function(req, res) {
+    db.newCar.create(req.body).then(function(carData) {
       res.json(carData);
     });
   });
 
   // Delete car by plate number
-  app.delete("/api/car/:plate", function (req, res) {
+  app.delete("/api/car/:plate", function(req, res) {
     db.newCar
       .destroy({ where: { plate: req.params.plate } })
       .then(function(carData) {
@@ -87,7 +90,7 @@ module.exports = function(app) {
   });
 
   // Update car information
-  app.put("/api/car/:plate", function (req, res) {
+  app.put("/api/car/:plate", function(req, res) {
     db.newCar
       .update(req.body, { where: { plate: req.params.plate } })
       .then(function(carData) {
@@ -95,11 +98,10 @@ module.exports = function(app) {
       });
   });
 
-
   // --------- CODE below is to Add and Delete parking information
 
   // Get parking by car plate
-  app.get("/api/park/:plate", function (req, res) {
+  app.get("/api/park/:plate", function(req, res) {
     db.parkingNew
       .findAll({ where: { plate: req.params.plate } })
       .then(function(parkData) {
@@ -122,5 +124,4 @@ module.exports = function(app) {
         res.json(parkData);
       });
   });
-
 };

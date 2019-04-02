@@ -1,12 +1,12 @@
 //addUser activates modal
-$( "#addUser" ).click(function() {
+$("#addUser").click(function() {
   $("#addNewCar").modal("show");
 });
 
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
-    return $.ajax({  
+    return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
@@ -17,7 +17,7 @@ var API = {
   },
   getExamples: function(user) {
     return $.ajax({
-      url: "api/user/"+ user.existingEmail + "/" + user.existingPassword,
+      url: "api/user/" + user.existingEmail + "/" + user.existingPassword,
       type: "GET"
     });
   },
@@ -30,30 +30,36 @@ var API = {
 };
 
 //register is id for register new user (inside modal)
-$("#register").click(function(){
+$("#register").click(function() {
   var newUser = {
-      email: $("#newEmail").val().trim(),
-      password: $("#newPassword").val().trim()
+    email: $("#newEmail")
+      .val()
+      .trim(),
+    password: $("#newPassword")
+      .val()
+      .trim()
   };
   console.log(newUser.email);
   console.log(newUser.password);
-  
+
   API.saveExample(newUser).then(function(response) {
-      alert("User added. Please Log in");
+    alert("User added. Please Log in");
   });
-  $("#addNewCar").modal("hide");
+  $("#modal").modal("hide");
 });
 
-
 //login stuff
-$("#logingIn").click(function(){
+$("#logingIn").click(function() {
   var user = {
-      existingEmail: $("#existingEmail").val().trim(),
-      existingPassword: $("#existingPassword").val().trim()
+    existingEmail: $("#existingEmail")
+      .val()
+      .trim(),
+    existingPassword: $("#existingPassword")
+      .val()
+      .trim()
   };
 
   API.getExamples(user).then(function(response) {
     console.log(response);
+  });
 });
-  
-})

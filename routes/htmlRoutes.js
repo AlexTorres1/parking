@@ -3,12 +3,12 @@ var verify = require("../public/js/verification");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-      res.render("index")
+    res.render("index");
   });
 
-  app.get("/reports", function(req, res){
+  app.get("/reports", function(req, res) {
     res.render("reports");
-  })
+  });
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {

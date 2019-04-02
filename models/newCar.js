@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   newCar.associate = function(models) {
-    newCar.belongsTo(models.user)
-    newCar.hasMany(models.parkingNew)
-  }
+    newCar.belongsTo(models.user);
+    newCar.hasMany(models.parkingNew);
+  };
 
   return newCar;
 };
