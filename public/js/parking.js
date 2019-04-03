@@ -21,6 +21,12 @@ var API = {
       type: "GET"
     });
   },
+  getPlate: function(user) {
+    return $.ajax({
+      url: "api/user/" + user.existingEmail,
+      type: "GET"
+    });
+  },
   deleteExample: function(id) {
     return $.ajax({
       url: "api/examples/" + id,
@@ -115,6 +121,9 @@ $("#logingIn").click(function(event) {
     }
     //  console.log("theee responseee" + response);
   });
+  // API.getPlate(user).then(function(response) {
+  //   res.render("reports", { park: response });
+  // });
 });
 
 // populateTable();
