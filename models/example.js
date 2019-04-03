@@ -7,10 +7,12 @@ module.exports = function(sequelize, DataTypes) {
     amount: DataTypes.DECIMAL(10,2),
     // eslint-disable-next-line prettier/prettier
     date: DataTypes.DATE,
+    userId: DataTypes.INTEGER
   });
 
   parkingNew.associate = function(models) {
-    parkingNew.belongsTo(models.newCar)
+    // parkingNew.belongsTo(models.newCar)
+    parkingNew.belongsTo(models.user)
   }
 
   return parkingNew;

@@ -61,12 +61,18 @@ var apiParking = {
       data: JSON.stringify(example)
     });
   },
-  getParking: function(plate) {
+  getParking: function(id) {
     return $.ajax({
-      url: "api/park/" + plate,
+      url: "api/park/" + id,
       type: "GET"
     });
   },
+  deleteParking: function(id) {
+    return $.ajax({
+      url: "api/park/" + id,
+      type: "DELETE"
+    });
+  }
 }
 
 //register is id for register new user (inside modal)
@@ -111,6 +117,9 @@ $("#logingIn").click(function(event) {
   });
 });
 
+// populateTable();
+
+
 //convert to string
 var convertedUserObj = JSON.parse(localStorage.getItem('userObj'));
 console.log(convertedUserObj.id);
@@ -125,7 +134,7 @@ $("#registerVehicle").click(function(){
   console.log(addingVehicle);
 
   addVehicle.savePlate(addingVehicle).then(function(response){
-    console.log(response);
+  console.log(response);
   $("#addVehicleModal").modal("hide");
   alert("Added vehicle");
   });
@@ -154,12 +163,69 @@ $("#registerParking").click(function () {
     state: $("#state").val().trim(),
     location: $("#location").val().trim(),
     amount: $("#amount").val().trim(),
-    date: $("#date").val().trim()
+    date: $("#date").val().trim(),
+    userId: convertedUserObj.id
   }
 
+  console.log(parking);
+
   apiParking.saveParking(parking).then(function(response){
-    console.log(response);
     $("#addParkingModal").modal("hide");
+    populateTable(); 
     alert("Added Parking Information");
   });
 });
+
+function populateTable(){
+  // var table = $("#populateTable");
+  apiParking.getParking(convertedUserObj.id).then(function(response){
+    console.log(response);
+    response.forEach(vehicle => {
+      console.log(vehicle.plate)
+      console.log(vehicle.state)
+      var tr =
+        `<tr data-id="${vehicle.userId}" id="row-${vehicle.userId}"><th scope="row"><a href="example/${vehicle.userId}">${vehicle.plate}</a></th><td>${vehicle.state}</td><td>${vehicle.location}</td><td>${vehicle.amount}</td><td>${vehicle.date}</td><td><a href="javascript:void(0)" class="btn btn-danger float-right delete" onclick="dropRow(${vehicle.userId})">ｘ</a></td></tr>`;
+
+        $("#populateTable").append(tr);
+      // var tblBody = ("#populateTable");
+      // // creating all cells
+      // for (var i = 0; i< vehicle.length; i++) {
+      // // creates a table row
+      // var row = $("<tr>");
+
+      // for (var j = 0; j < vehicle.length; j++) {
+      //   // Create a <td> element and a text node, make the text
+      //   // node the contents of the <td>, and put the <td> at
+      //   // the end of the table row
+      //   var cell = $("<td>");
+      //   var cellText = text(vehicle.plate);
+      //   cell.append(cellText);
+      //   row.append(cell);
+      // }
+      // tblBody.append(row);
+  })
+  })
+}
+
+populateTable();
+// code below is for logout to remove all the local storage
+// localStorage.clear();
+
+var dropRow = function(idToDelete) {
+  console.log("hello");
+  /*var idToDelete = $(this)
+    .parent()
+    .attr("data-id");*/
+
+    apiParking.deleteParking(idToDelete).then(function() {
+    //refreshExamples();
+    $("#row-" + idToDelete).remove();
+    alert("Item will be removed now");
+  });
+};
+
+//logout
+$("#signOut").click(function(){
+  window.location.href = "/";
+  localStorage.clear();
+})
