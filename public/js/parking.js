@@ -41,6 +41,32 @@ var addVehicle = {
       data: JSON.stringify(example)
     });
   },
+  getVehicle: function(userId) {
+    return $.ajax({
+      url: "api/car/" + userId,
+      type: "GET"
+    });
+  },
+}
+
+//API for parking
+var apiParking = {
+  saveParking: function(example) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/park",
+      data: JSON.stringify(example)
+    });
+  },
+  getParking: function(plate) {
+    return $.ajax({
+      url: "api/park/" + plate,
+      type: "GET"
+    });
+  },
 }
 
 //register is id for register new user (inside modal)
@@ -76,6 +102,7 @@ $("#logingIn").click(function(event) {
 
   API.getExamples(user).then(function(response) {
     if (response) {
+      localStorage.setItem('userObj', JSON.stringify(response));
       window.location.href = "reports";
     } else {
       alert("Wrong user name and/or password");
@@ -84,15 +111,55 @@ $("#logingIn").click(function(event) {
   });
 });
 
+//convert to string
+var convertedUserObj = JSON.parse(localStorage.getItem('userObj'));
+console.log(convertedUserObj.id);
 
 //add a new license plate
 $("#registerVehicle").click(function(){
   var addingVehicle = {
-    plate:  $("#newPlate").val().trim(),
-    state:  $("#state").val().trim()
+    plate:  $("#addPlate").val().trim(),
+    state:  $("#addState").val().trim(),
+    userId: convertedUserObj.id
   }
+  console.log(addingVehicle);
 
   addVehicle.savePlate(addingVehicle).then(function(response){
     console.log(response);
-  })
+  $("#addVehicleModal").modal("hide");
+  alert("Added vehicle");
+  });
+});
+
+$("#addParking").click(function(){
+  var plateDropdown = $("#plateOptions");
+  addVehicle.getVehicle(convertedUserObj.id).then(function(response) {
+    response.forEach(vehicle => {
+      var plateElement = $('<a class="dropdown-item">');
+      plateElement.text(vehicle.plate);
+      plateDropdown.append(plateElement);
+    });
+  });
 })
+
+$('.dropdown-menu').on( 'click', 'a', function() {
+  var text = $(this).html();
+  var htmlText = text + ' <span class="caret"></span>';
+  $(this).closest('.dropdown').find('.dropdown-toggle').html(htmlText);
+});
+
+$("#registerParking").click(function () {
+  var parking = {
+    plate: $("#dropdownPlate")[0].innerText.trim(),
+    state: $("#state").val().trim(),
+    location: $("#location").val().trim(),
+    amount: $("#amount").val().trim(),
+    date: $("#date").val().trim()
+  }
+
+  apiParking.saveParking(parking).then(function(response){
+    console.log(response);
+    $("#addParkingModal").modal("hide");
+    alert("Added Parking Information");
+  });
+});
