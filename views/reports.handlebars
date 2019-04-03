@@ -27,7 +27,7 @@
         <div class="container">
             <div class="col text-center py-2">   
             <button type="button mx-auto" data-toggle="modal" data-target="#addVehicleModal"class="btn btn-primary">Add Vehicle</button>
-            <button type="button mx-auto" data-toggle="modal" data-target="#addParkingModal"class="btn btn-primary">Add Parking</button>
+            <button type="button mx-auto" data-toggle="modal" data-target="#addParkingModal"class="btn btn-primary" id="addParking">Add Parking</button>
             </div>
         </div> 
     </div>
@@ -115,14 +115,20 @@
                 <h2 class="modalTitle">Register Your Car: </h2>
                 <p class="text-center ">Input your car's data. </p>
                 <div class="col">
-                <input type="text" placeholder="License plate #" class=" modalInput">
-                <input type="text" placeholder="State" class=" modalInput">
-                <input type="text" placeholder="Location" class=" modalInput">
-                <input type="text" placeholder="Amount" class=" modalInput">
-                <input type="text" placeholder="Date" class=" modalInput">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPlate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Plate
+                    </button>
+                    <div class="dropdown-menu" id="plateOptions" aria-labelledby="dropdownPlate">
+                    </div>
+                </div>
+                <input id="state" type="text" placeholder="State" class=" modalInput">
+                <input id="location" type="text" placeholder="Location" class=" modalInput">
+                <input id="amount" type="text" placeholder="Amount" class=" modalInput">
+                <input id="date" type="date" placeholder="Date" class=" modalInput">
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
+            <div id="registerParking" class="modal-footer"><button class="btn btn-primary" type="button">REGISTER </button></div>
             </div>
         </div>
     </div>
@@ -149,6 +155,7 @@
     <script src="/js/index.js"></script>
     <script src="/js/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/js/parking.js"></script>
 
     
 

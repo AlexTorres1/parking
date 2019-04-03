@@ -41,7 +41,7 @@ module.exports = function(app) {
           console.log("email: " + userData.email);
           // localStorage.setItem("email", userData.email);
           console.log("you did it");
-          return res.redirect("/reports");
+          res.json(userData);
         } else {
           console.log("Wrong user name or password!");
           return false;
