@@ -115,9 +115,9 @@ module.exports = function(app) {
   // --------- CODE below is to Add and Delete parking information
 
   // Get parking by car plate
-  app.get("/api/park/:plate", function(req, res) {
+  app.get("/api/park/:userId", function(req, res) {
     db.parkingNew
-      .findAll({ where: { plate: req.params.plate } })
+      .findAll({ where: { userId: req.params.userId } })
       .then(function(parkData) {
         res.json(parkData);
       });
@@ -135,6 +135,7 @@ module.exports = function(app) {
     db.parkingNew
       .destroy({ where: { id: req.params.id } })
       .then(function(parkData) {
+        console.log("you are here idiot");
         res.json(parkData);
       });
   });

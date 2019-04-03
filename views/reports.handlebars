@@ -3,6 +3,7 @@
         <div class="container"><a class="navbar-brand logo" href="#"><i class="fas fa-parking"></i>&nbsp;Parking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                 class="collapse navbar-collapse" id="navbarNav">
+                <button type="button mx-auto" data-toggle="modal" data-target="#addVehicleModal"class="btn btn-primary" id="signOut">SignOut</button>
         </div>
         </div>
     </nav>
@@ -47,42 +48,7 @@
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {{#each park}}
-                        <tr>
-                            <td>{{this.plate}}</td>
-                            <td>{{this.state}}</td>
-                            <td>{{this.location}}</td>
-                            <td>{{this.amount}}</td>
-                            <td>{{this.date}}</td>
-                            <td><button class="btn btn-primary" type="button" id="{{this.id}}">X</button></td>
-                        </tr>
-                        {{/each}}
-                        {{!-- <tr>
-                            <td>JSW123</td>
-                            <td>Florida</td>
-                            <td>Miami</td>
-                            <td>$12.99</td>
-                            <td>03/30/2019</td>
-                            <td><button class="btn btn-primary" type="button">X</button></td>
-                        </tr>
-                        <tr>
-                            <td>JSW123</td>
-                            <td>Florida</td>
-                            <td>Miami</td>
-                            <td>$12.99</td>
-                            <td>03/30/2019</td>
-                            <td><button class="btn btn-primary" type="button">X</button></td>
-                        </tr>
-                        <tr>
-                            <td>JSW123</td>
-                            <td>Florida</td>
-                            <td>Miami</td>
-                            <td>$12.99</td>
-                            <td>03/30/2019</td>
-                            <td><button class="btn btn-primary" type="button">X</button></td>
-                        </tr> --}}
-
+                    <tbody id="populateTable">
                     </tbody>
                 </table>
             </div>

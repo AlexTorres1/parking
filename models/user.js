@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
     user.hasMany(modals.newCar, {
       onDelete: "cascade"
     });
+    user.hasMany(modals.parkingNew, {
+      onDelete: "cascade"
+    });
   };
 
   return user;

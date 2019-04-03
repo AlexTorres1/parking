@@ -7,7 +7,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Yearly',
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -41,7 +41,7 @@ var ctx2 = document.getElementById('myChart2').getContext('2d');
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'My Second dataset',
+            label: 'Monthly Parking',
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
