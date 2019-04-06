@@ -117,11 +117,7 @@ module.exports = function(app) {
   // Get parking by car plate
   app.get("/api/park/:userId", function(req, res) {
     db.parkingNew
-      .findAll({
-        where: { userId: req.params.userId },
-        // eslint-disable-next-line quotes
-        order: [["date"]]
-      })
+      .findAll({ where: { userId: req.params.userId } })
       .then(function(parkData) {
         res.json(parkData);
       });
