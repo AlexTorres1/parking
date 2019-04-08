@@ -1,118 +1,107 @@
-.parallax {
-    background: url(../images/map.png);
-    min-height: 400px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .parallax2 {
-    background: url(../images/parking-parking-lot-underground-garage-2996.jpg);
-    min-height: 200px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
 
-  .user_card {
-    height: 400px;
-    width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: #f39c12;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+ nav ul a,
+ nav .brand-logo {
+   color: #616161 ;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+ 
+ .sidenav-trigger {
+   color: #26a69a;
+ }
+ 
+ .parallax-container {
+   min-height: 380px;
+   line-height: 0;
+   height: auto;
+   color: rgba(255,255,255,.9);
+ }
+   .parallax-container .section {
+     width: 100%;
+   }
+ 
+ @media only screen and (max-width : 992px) {
+   .parallax-container .section {
+     position: absolute;
+     top: 40%;
+   }
+   #index-banner .section {
+     top: 10%;
+   }
+ }
+ 
+ @media only screen and (max-width : 600px) {
+   #index-banner .section {
+     top: 0;
+   }
+ }
+ 
+ @media only screen and (max-width: 992px) {
+ nav .brand-logo {    
+     font-size: 2.0rem;
+  
+ } .icon-block
+   padding: 0 15px;
+   }
+ }
+ 
+ .icon-block .material-icons {
+   font-size: inherit;
+ }
+ 
+ footer.page-footer {
+   margin: 0;
+ }
+ 
+ .white {
+   height: 80px;
+   line-height: 80px;
+   background-color: #ee6e73!important;
+ }
+ 
+ /* #logo-container {
+   color: #039be5;
+ } */
+ 
+ #topIcon{
+   line-height: 80px;
+   font-size: 48px;
+ }
+ 
+ #chartSection {
+   padding-top: 40px;
+   padding-bottom: 8px;
+   background-color: aliceblue;
+ }
+ 
+ #mainText{
+   -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: #f8f5f5;
+     font-weight: 500;
+ }
 
-  }
-  .brand_logo_container {
-    position: absolute;
-    height: 170px;
-    width: 170px;
-    top: -75px;
-    border-radius: 50%;
-    background: #60a3bc;
-    padding: 10px;
-    text-align: center;
-  }
-  .brand_logo {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
-  .form_container {
-    margin-top: 100px;
-  }
-  .login_btn {
-    width: 100%;
-    background: #c0392b !important;
-    color: white !important;
-  }
-  .login_btn:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-  }
-  .login_container {
-    padding: 0 2rem;
-  }
-  .input-group-text {
-    background: #c0392b !important;
-    color: white !important;
-    border: 0 !important;
-    border-radius: 0.25rem 0 0 0.25rem !important;
-  }
-  .input_user,
-  .input_pass:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-  }
-  .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #c0392b !important;
-  }
+ #icons {
+  color: #616161!important;
+}
 
-  .login {
-    color: rgb(54,108,170);
-  }
+#t1{
+  background-color: #ee6e73!important;
+}
 
-  #charts {
-    padding-top: 100px;
-  }
+#t2{
+  background-color: #26a69a!important;
+}
 
-  #chartSection{
-    padding-bottom: 10px;
-    background-color: aliceblue;
-  }
-
-  input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-  }
-
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
-  #orange {
-    color: #E57373!important;
-  }
-
-  .page-footer {
-    background-color: #E57373;
-  }
+#t3{
+  background-color: #616161!important;
+}
+ 
